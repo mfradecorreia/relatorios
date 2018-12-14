@@ -1,0 +1,10 @@
+# https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-29.php
+# https://www.reportlab.com/docs/reportlab-userguide.pdf
+# https://www.w3schools.com/python/python_for_loops.asp
+# https://stackoverflow.com/questions/17071871/select-rows-from-a-dataframe-based-on-values-in-a-column-in-pandas
+
+df=pandas.read_excel("C:/Users/MFC/Documents/Projectos Codigo/Eventos.xlsx")
+l = ['A','B','C','D']
+for i in l:
+	print(df.loc[df['Nome'].isin([i])])
+	
