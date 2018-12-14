@@ -8,3 +8,12 @@ l = ['A','B','C','D']
 for i in l:
 	print(df.loc[df['Nome'].isin([i])])
 	
+import pandas
+from reportlab.pdfgen import canvas
+ficheiro_input="C:/Users/MFC/Documents/Projectos Codigo/Eventos.xlsx"
+d={}
+df=pandas.read_excel(ficheiro_input)
+l = df.Nome.unique()
+for i in l:
+    print((df.loc[df['Nome'].isin([i])]))
+    d[i]=(df.loc[df['Nome'].isin([i])])
