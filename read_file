@@ -17,3 +17,22 @@ l = df.Nome.unique()
 for i in l:
     print((df.loc[df['Nome'].isin([i])]))
     d[i]=(df.loc[df['Nome'].isin([i])])
+
+
+#https://python-docx.readthedocs.io/en/latest/api/document.html#id1
+
+from docx import Document
+from docx.shared import Cm
+import csv
+import pandas
+from reportlab.pdfgen import canvas
+ficheiro_input="C:/Users/MFC/Documents/Projectos Codigo/Eventos.xlsx"
+d={}
+df=pandas.read_excel(ficheiro_input)
+l = df.Nome.unique()
+for i in l:
+    print((df.loc[df['Nome'].isin([i])]))
+    d[i]=(df.loc[df['Nome'].isin([i])])
+    document=Document()
+    document.add_heading("Documento" + i)
+    document.save('demo' + i +'.docx')
